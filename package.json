@@ -1,0 +1,23 @@
+{
+  "name": "saligtaran",
+  "version": "0.1.0",
+  "description": "Theme for Saligtaran Tumblr",
+  "main": "dist/saligtaran.js",
+  "author": "John Reinier Bulaong <rein.bulaong@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "debounce": "^1.0.2",
+    "set-photoset": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "webpack": "^3.5.6",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^6.0.0",
+    "babel-preset-env": "^1.5.1"
+  },
+  "scripts": {
+    "lint": "eslint ./src --ext .js --fix",
+    "build": "webpack --config webpack.config.js -p"
+  }
+}

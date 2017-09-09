@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8" />
+	<title>
+		{block:TagPage} Posts Tagged &lsquo;{Tag}&rsquo; - {/block:TagPage} {block:PostSummary} {PostSummary} - {/block:PostSummary} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{Title}
+	</title>
+
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	{block:Description}
+	<meta name="description" content="{MetaDescription}" />
+	{/block:Description}
+
+	<meta name="keywords" content="jzumun{block:Permalink}, {block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}" />
+	<meta name=”title” content=”{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}” />
+
+	<meta name="image:Body Background" content=""/>
+	<meta name="image:Title Background" content=""/>
+	<meta name="image:Post Body Background" content=""/>
+
+	<meta name="font:Body" content="Futura" />
+
+	<meta name="text:Google Title Font" content="Alegreya Sans SC" />
+	<meta name="text:Google Body Font" content="Roboto" />
+	<meta name="text:Google Title Font Sizes" content="300,400,700" />
+	<meta name="text:Google Body Font Sizes" content="300,400,500,700" />
+	<meta name="text:Google Analytics ID" content="" />
+	<meta name='text:Disqus Shortname' content='' />
+
+
+	<meta name="text:Font Size" content="10px" />
+
+	<meta name="color:Header" content="#f2f2f2" />
+	<meta name="color:Body Shadow" content="#dddddd" />
+	<meta name="color:Accent Shadow" content="#701706" />
+	<meta name="color:Text" content="#121212" />
+
+	<meta name="if:Post Theory Tag Cloud" content="1" />
+	<meta name="if:Keyboard Shortcuts" content="1" />
+
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="shortcut icon" href="{Favicon}" />
+	<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+	{block:Pagination}
+	{block:PreviousPage}<link rel="prev" href="{PreviousPage}" />{/block:PreviousPage}
+	{block:NextPage}<link rel="next" href="{NextPage}" />{/block:NextPage}
+	{/block:Pagination}
+
+
+	<link href='http://fonts.googleapis.com/css?family={text:Google Title Font}:{text:Google Title Font Sizes}|{text:Google Body Font}:{text:Google Body Font Sizes}' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/wvoc5tm/X82o1z53p/normalize.css" >
+	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/wvoc5tm/4xnovzarm/saligtaran.css" >
+	<style type="text/css">
+			#content {
+					margin:auto;
+					padding:1em;
+					max-width:1000px;
+			}
+			.non-media-content {
+					padding:0 1em;
+					display:block;
+			}
+			img {
+					display:block;
+					max-width:100%;
+					height:auto;
+			}
+			.header-title {
+					margin-bottom:0;
+			}
+			.header-description {
+					max-width:1000px;
+					margin:auto;
+					line-height:2;
+					border-top:1px solid;
+			}
+			.post {
+					overflow:hidden;
+			}
+			.post-body {
+					margin: 0 1em;
+			}
+		/*Vars*/
+				:focus { outline-color: {AccentColor} ; }
+		::selection {background: {AccentColor} ; color: {BackgroundColor} ;}
+		::-moz-selection {background: {AccentColor} ; color: {BackgroundColor} ;}
+
+		/*Typographical Styling*/
+		body { font-family: "{text:Google Body Font}",  {font:Body} , san-serif ; font-size:{text:Font Size};
+				-moz-font-feature-settings:"onum" 1, "nalt" 1, "liga" 1;
+						-ms-font-feature-settings:"onum" 1, "nalt" 1, "liga" 1;
+						-o-font-feature-settings:"onum" 1, "nalt" 1, "liga" 1;
+						-webkit-font-feature-settings:"onum" 1, "nalt" 1, "liga" 1;
+						font-feature-settings:"onum" 1, "nalt" 1, "liga" 1;
+		}
+
+
+		h1, h2, h3,
+		.heading, .footing,
+		.title, .nav-link, .query {
+			font-family: "{text:Google Title Font}" , {TitleFont} , san-serif;
+			font-weight:normal;
+		}
+
+		/*Background Images*/
+		#head 	   {background-image: url('{image:Title Background}'); background-blend-mode: multiply;}
+		body   {background-image: url('{image:Body Background}');background-blend-mode: multiply}
+		.post {background-image: url('{image:Post Body Background}');background-blend-mode: multiply}
+
+		/*Container Themes*/
+
+		/*Content*/
+		.color-main
+		{
+			background-color: {BackgroundColor};
+			border-color: {color:Body Shadow};
+			color: {color:Text};
+		}
+
+		/*Content Shadow*/
+		.color-main-shadow,
+		.post
+		{
+			border-color: {BackgroundColor};
+			background-color: {color:Body Shadow};
+			color: {color:Text};
+		}
+
+		/*Background*/
+		.color-background,
+		#head, #footer, .index-content .post-footing
+		{
+			background-color: {color:Header} ;
+			border-color: {AccentColor} ;
+			color: {BackgroundColor}
+		}
+
+		/*Accent*/
+		.color-accent
+		{
+			background-color: {AccentColor};
+			border-color: {color:Accent Shadow};
+			color: {BackgroundColor};
+		}
+
+		/*Accent Shadow*/
+		.color-accent-shadow
+		{
+			border-color: {AccentColor};
+			background-color: {color:Accent Shadow};
+			color: {BackgroundColor};
+		}
+
+
+		/*Inherit Colors*/
+		.color-inherit
+		{
+			border-color: inherit;
+			background-color: inherit;
+			color: inherit;
+		}
+
+		/*Variant Text Themes*/
+		body, .title	{	color: {color:Text};		}
+		.header-title {	color: {TitleColor} ; }
+		a		{	color:{AccentColor};			}
+		a:hover {	color:{color:Accent Shadow};	}
+		#footer {	color:{AccentColor};		}
+		.nav-link, .note a {   color:{BackgroundColor};         }
+
+
+		{CustomCSS}
+
+	</style>
+</head>
+<body>
+	<header id="head">
+		<a href="/" id="title-head">
+				<h1 id="title" class="header-title">{Title}</h1>
+		</a>
+		<p class="header-description">{Description}</p>
+		<nav class="header-nav">
+			<a class="nav-link" href="/">Home</a>
+			{block:AskEnabled}<a class="nav-link" href="/ask">Ask</a>{/block:AskEnabled}
+			{block:SubmissionsEnabled}<a class="nav-link" href="/submit">Submit</a>{/block:SubmissionsEnabled}
+			<a class="nav-link" href="/random">Random</a>
+			<a class="nav-link" href="/archive">Archive</a>
+		</nav>
+		{block:HasPages}
+		<nav class="header-nav custom-navs">
+			{block:Pages}<a href="{URL}" class="alink nav-link">{Label}</a>{/block:Pages}
+		</nav>
+		{/block:HasPages}
+		<form action="/search" class="search" id="searchform" method="get">
+			<label for="q" class="label">Search</label>
+			<input name="q" class="query" placeholder="Search" type="text"/>
+			<input type="submit" class="submit button" value="&rtrif;"/>
+		</form>
+	</header>
+	<main id="content" class="{block:IndexPage}index-content{/block:IndexPage}">
+		{block:SearchPage}
+		<h1 class="content-header">{SearchResultCount} Results for {SearchQuery} {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
+		{/block:SearchPage}
+		{block:TagPage}
+		<h1 class="content-header">{SearchResultCount} Posts tagged '{Tag}' {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
+		{/block:TagPage}
+		{block:Posts}
+		<article class="post {TagsAsClasses} post-{PostType} {block:Photoset}post-photoset{/block:Photoset}" id="post-{PostID}">
+			<section class="post-head">
+				{block:Text}<a href="{Permalink}" class="non-media-content head-content title">{block:Title}<h1>{Title}</h1>{/block:Title}</a>{/block:Text}
+				{block:Chat}{block:Title}<a href="{Permalink}" class="head-content title non-media-content ">{block:Title}<h1>{Title}</h1>{/block:Title}</a>{/block:Title}{/block:Chat}
+				{block:Photo}
+				<a class="photo-box" {block:LinkURL} href="{LinkURL}" {/block:LinkURL}  data-highres="{PhotoURL-HighRes}">
+					<img class="head-content media-content" src="{PhotoURL-HighRes}" srcset="{PhotoURL-250} 250w, {PhotoURL-500} 500w, {PhotoURL-HighRes} 1280w" sizes="(max-width:750px) 100vw, (max-width:900px) 75vw, 60vw" alt="{PhotoAlt}"  height='{PhotoHeight-HighRes}' width='{PhotoWidth-HighRes}' />
+				</a>
+				{/block:Photo}
+				{block:Photoset}
+				<div class="photoset-container head-content" data-layout="{PhotosetLayout}">
+					{block:Photos}
+					<a href="{PhotoURL-HighRes}" class="photo-box"{block:Caption}data-caption="{Caption}"{/block:Caption} data-rel="photoset{PostID}"   data-highres="{PhotoURL-HighRes}">
+						<img class="photoset-img media-content" src="{PhotoURL-HighRes}"	srcset="{PhotoURL-250} 250w, {PhotoURL-500} 500w, {PhotoURL-HighRes} 1280w" sizes="(max-width:750px) 100vw, (max-width:900px) 75vw, 60vw" alt="{block:Caption}{Caption}{/block:Caption}" height='{PhotoHeight-HighRes}' width='{PhotoWidth-HighRes}' />
+					</a>
+					{/block:Photos}
+				</div>
+				{/block:Photoset}
+				{block:Quote}
+				<blockquote class="head-content non-media-content  quote-content {Length}">{Quote}</blockquote>
+				{/block:Quote}
+				{block:Link}
+				<a href="{URL}" class="head-content non-media-content " target="_blank">
+					<div class="head-aside {block:Thumbnail} has-thumbnail " style="background-image:url('http://static.tumblr.com/wvoc5tm/m7Dn6v2vk/g3178.png'), url('{Thumbnail}') {/block:Thumbnail}" ></div>
+					<div class="head-main-content link-container" >
+						<h1 class="title">{Name}</h1>
+						<span class="host">{Host}</span>
+					</div>
+				</a>
+				{/block:Link}
+				{block:Audio}
+				{block:AudioEmbed}<div class="head-content media-content iframe-resize">{AudioEmbed-500}</div>{/block:AudioEmbed}
+				{block:AudioPlayer}
+				<div class="head-content">
+					<div class="head-aside has-thumbnail {block:AlbumArt} cover"  style="background-image:url('{AlbumArtURL}');{/block:AlbumArt}">
+						{AudioPlayer}
+					</div>
+					<dl class="head-main-content a-native audio-container">
+						<dt class="a-label">Track Name</dt><dd class="a-info a-name">{block:TrackName}{TrackName}{/block:TrackName}</dd>
+						<dt class="a-label">Artist</dt><dd class="a-info a-artist">{block:Artist}{Artist}{/block:Artist}</dd>
+						<dt class="a-label">Album</dt><dd class="a-info a-album">{block:Album}{Album}{/block:Album}</dd>
+					</dl>
+				</div>
+				{/block:AudioPlayer}
+				{/block:Audio}
+				{block:Video}<div class="head-content media-content iframe-resize">{Video-500}</div>{/block:Video}
+				{block:Answer}
+				<div class="head-content non-media-content  dialogue asker">
+					<a href="http://{PlaintextAsker}.tumblr.com/" class="head-aside speaker supine cover" data-caption="{PlaintextAsker}" style="background-image:url({AskerPortraitURL-128})">{PlaintextAsker}</a>
+					<div class="spoken head-main-content">{Question}</div>
+				</div>
+				{block:Answerer}
+				<div class="head-content non-media-content  dialogue answerer">
+					<a href="http://{PlaintextAnswerer}.tumblr.com/"class="head-aside speaker supine cover" data-caption="{PlaintextAnswerer}" style="background-image:url({AnswererPortraitURL-128})" >{PlaintextAnswerer}</a>
+					<div class="spoken head-main-content">{Answer}</div>
+				</div>
+				{/block:Answerer}
+				{/block:Answer}
+			</section>
+			<section class="post-body">
+				{block:Text}{Body}{/block:Text}
+				{block:Quote}{block:Source}{Source}{/block:Source}{/block:Quote}
+				{block:Audio}{block:Caption}{Caption}{/block:Caption}{/block:Audio}
+				{block:Video}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+			{block:PermalinkPage}
+				{block:Photo}{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+				{block:Photoset}{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
+				{block:Link}
+				{block:Excerpt}<blockquote class="link-excerpt boxquote">{Excerpt}</blockquote>{/block:Excerpt}
+				{block:Description}{Description}{/block:Description}
+				{/block:Link}
+				{block:Chat}
+				<dl class="chat-table">
+				{block:Lines}
+					<dt class="chat-label label-{Alt}">{block:Label}{Label}{/block:Label}</dt>
+					<dd class="chat-line line-{Alt}">{Line}</dd>
+				{/block:Lines}
+				</dl>
+
+				</table>
+				{/block:Chat}
+				{block:Answer}{Replies}{/block:Answer}
+			{/block:PermalinkPage}
+			</section>
+
+			<footer class="post-footing footing">
+				{block:Date}
+				<section class="post-options">
+					<span class="tumblr-options">
+						<div class="like button">{LikeButton size="15" color="grey"}</div>
+						<div class="reblog button">{ReblogButton size="15" color="grey"}</div>
+						<a class="permalink alink" href="{Permalink}"><span>Permalink</span></a>
+					</span>
+					<span class="share-options">
+							<a class="fb button" href="https://www.facebook.com/sharer/sharer.php?u={URLEncodedShortURL}" target="_blank">Share on Facebook</a>
+							<a class="tw button" href="https://twitter.com/intent/tweet/?{block:PostSummary}text={URLEncodedPostSummary}{/block:PostSummary}&url={URLEncodedShortURL}	{block:Twitter}&via={TwitterUsername}{/block:Twitter}&hashtags={Name}" target="_blank">Share on Twitter</a>
+						 <a class="gg button" href="https://plus.google.com/share?url={URLEncodedShortURL}" target="_blank">Share on Google+</a>
+					</span>
+				</section>
+				<section class="post-details">
+					<div class="post-details-permalink post-detail">
+						<a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}"/> <time class="f-text f-det f-time" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}-{Minutes}-{Seconds}" >{TimeAgo} at {12Hour}:{Minutes} {CapitalAmPm}, {Month} {DayOfMonth}, {Year}</time></a>
+						<a href="{Permalink}#notes"><span class="f-text f-det f-notes">{NoteCountWithLabel}</span></a>
+					</div>
+					{/block:Date}
+					{block:RebloggedFrom}
+					<div class="post-details-reblog post-detail">
+						<a href="{ReblogParentURL}" target="_blank"><span class="f-text f-reblog">Reblogged from </span>{ReblogParentName}</a>
+						<a href="{ReblogRootURL}" target="_blank"><span class="f-reblog f-text f-original">Originally from </span>{ReblogRootName}</a>
+					</div>
+					{/block:RebloggedFrom}
+					{block:ContentSource}
+					<div class="post-details-source post-detail">
+						<a href="{SourceURL}">
+						{block:NoSourceLogo}<span class="f-text f-source">Source:</span>{SourceTitle}<img src="{BlackLogoURL}" alt="{Source Title}" />{/block:NoSourceLogo}
+						{block:SourceLogo} {/block:SourceLogo}
+						</a>
+					</div>
+					{/block:ContentSource}
+					{block:HasTags}
+					<ul class="post-details-tags">
+						{block:Tags}<li class="tag-container"><a href="{TagURL}" class="tum-tag">{Tag}</a></li>{/block:Tags}
+					</ul>
+					{/block:HasTags}
+				</section>
+			</footer>
+		</article>
+
+		{block:PermalinkPage}
+		{block:IfDisqusShortname}
+		<div class="post disqus">
+			<div id="disqus_thread"></div>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				</div>
+		{/block:IfDisqusShortname}
+		{block:PostNotes}<section class="post" id="notes">{PostNotes-64}</section>{/block:PostNotes}
+		{/block:PermalinkPage}
+
+
+	{/block:Posts}
+	</main>
+	<nav id="pagination" class="pagination">
+		{block:Pagination}
+		{block:PreviousPage}<a href="{PreviousPage}" title="Previous Page" id="prev" class="pagination-button pagination-prev nav-link">Previous Page</a>{/block:PreviousPage}
+		{CurrentPage} of {TotalPages}
+		{block:NextPage}<a href="{NextPage}" title="Next Page" id="next" class="pagination-button pagination-next nav-link">Next Page</a>{/block:NextPage}
+		{/block:Pagination}
+	</nav>
+	<footer id="footer" class="footing">
+		<ul class="listing" id="credits">
+			<li>Copyright &copy; {CopyrightYears}.</li>
+			<li>Theme by <a href="http://jzumun.tumblr.com">JZumun</a>.</li>
+			{block:IfPostTheoryTagCloud}
+			<li>Tag Cloud by <a href="http://post-theory.com/tumblr-tag-cloud-javascript">Post-Theory</a>.</li>
+			{/block:IfPostTheoryTagCloud}
+			{block:IfDisqusShortname}
+			<li>Comments by <a href="http://disqus.com" class="dsq-brlink">Disqus</a></li>
+			{/block:IfDisqusShortname}
+		</ul>
+		<ul class="listing" id="foot-links">
+			<li><a href="{RSS}">RSS FEED</a></li>
+		</ul>
+	</footer>
+	<div class="script-container">
+			<script type="text/javascript" src="./saligtaran.js"></script>
+		<!-- DISQUS -->
+		{block:PermalinkPage}
+		{block:IfDisqusShortname}
+		<script type="text/javascript">
+				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				var disqus_shortname = '{text:Disqus Shortname}'; // Required - Enter shortname in Tumblr Theme Options
+				var disqus_url = '{Permalink}';
+
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+		</script>
+		{/block:IfDisqusShortname}
+		{/block:PermalinkPage}
+	</div>
+</body>
+</html>
