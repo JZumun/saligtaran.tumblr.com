@@ -107,42 +107,28 @@ img {
 	top:0;
 	left:0;
 	right:0;
-	bottom:0;
 	opacity:0;
 	transition:opacity 0.5s;
+	padding: 0;
 }
-.index-content .post-options {
-	height:100%;
-}
+
 .index-content .tumblr-options {
-	width:100%;
-	height: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 3em 1fr;
-	grid-template-areas: "like reblog" "permalink permalink"
-}
-.like.button {
-	grid-area: like;
-}
-.reblog.button {
-	grid-area: reblog;
+	display: flex;
 }
 .index-content .post-options .button {
-	height:100%;
-	padding: 1em;
+	padding: 0.5em;
+	flex:none;
+	width: 2em;
+	height: 2em;
 }
 .index-content .button iframe, .index-content .reblog_button {
 	width: 100% !important;
 }
 .index-content .permalink {
-	grid-area:permalink;
-	text-align:center;
 	color: white !important;
-	display:flex;
-	flex-direction:column;
-	justify-content: flex-end;
-	padding:1em;
+	padding:0 0.5em;
+	flex: auto;
+	line-height:2em;
 }
 
 .index-content .post:hover .post-footing {
