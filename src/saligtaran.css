@@ -7,6 +7,12 @@ a {
 	font-weight:bold;
 }
 
+img {
+	display:block;
+	max-width:100%;
+	height:auto;
+}
+
 #head {
 	padding: 1em;
 	text-align: center;
@@ -16,11 +22,16 @@ a {
 		letter-spacing: 0.1ch;
 		font-weight: lighter;
 		font-size: 2.5em;
+		margin-bottom:0;
 }
 
 .header-description {
-		font-size: 0.75em;
-		font-weight: lighter;
+	max-width:1000px;
+	margin:auto;
+	line-height:2;
+	border-top:1px solid;
+	font-size: 0.75em;
+	font-weight: lighter;
 }
 
 .header-nav {
@@ -72,8 +83,12 @@ a {
 	display:none;
 }
 
+.post {
+	overflow:hidden;
+}
+
 .non-media-content {
-		padding:0 1em;
+		padding:0 2em;
 		display:block;
 }
 
