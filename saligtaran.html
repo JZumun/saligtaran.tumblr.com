@@ -54,7 +54,8 @@
 
 	<link href='http://fonts.googleapis.com/css?family={text:Google Title Font}:{text:Google Title Font Sizes}|{text:Google Body Font}:{text:Google Body Font Sizes}' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/wvoc5tm/X82o1z53p/normalize.css" >
-	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/wvoc5tm/kSaow16mo/saligtaran.css" >
+	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/wvoc5tm/eY1ow2we6/saligtaran.css" >
+		<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/wvoc5tm/Mnlow2ws9/animations.css" >
 	<style type="text/css">
 		/*Vars*/
 				:focus { outline-color: {AccentColor} ; }
@@ -186,12 +187,16 @@
 				{block:Text}<a href="{Permalink}" class="non-media-content head-content title">{block:Title}<h1>{Title}</h1>{/block:Title}</a>{/block:Text}
 				{block:Chat}{block:Title}<a href="{Permalink}" class="head-content title non-media-content ">{block:Title}<h1>{Title}</h1>{/block:Title}</a>{/block:Title}{/block:Chat}
 				{block:Photo}
-				<a class="photo-box" {block:LinkURL} href="{LinkURL}" {/block:LinkURL}  data-highres="{PhotoURL-HighRes}">
+				<label for="c{PostId}" class="ambigram-animator-label">Animate</label>
+				<input type="checkbox" class="ambigram-animator" id="c{PostId}"/>
+				<a class="photo-box ambigram-holder" {block:LinkURL} href="{LinkURL}" {/block:LinkURL}  data-highres="{PhotoURL-HighRes}">
 					<img class="head-content media-content" src="{PhotoURL-HighRes}" srcset="{PhotoURL-250} 250w, {PhotoURL-500} 500w, {PhotoURL-HighRes} 1280w" sizes="(max-width:750px) 100vw, (max-width:900px) 75vw, 60vw" alt="{PhotoAlt}"  height='{PhotoHeight-HighRes}' width='{PhotoWidth-HighRes}' />
 				</a>
 				{/block:Photo}
 				{block:Photoset}
-				<div class="photoset-container head-content" data-layout="{PhotosetLayout}">
+				<label for="c{PostId}" class="ambigram-animator-label">Animate</label>
+				<input type="checkbox" class="ambigram-animator" id="c{PostId}"/>
+				<div class="photoset-container head-content ambigram-holder" data-layout="{PhotosetLayout}">
 					{block:Photos}
 					<a href="{PhotoURL-HighRes}" class="photo-box"{block:Caption}data-caption="{Caption}"{/block:Caption} data-rel="photoset{PostID}"   data-highres="{PhotoURL-HighRes}">
 						<img class="photoset-img media-content" src="{PhotoURL-HighRes}"	srcset="{PhotoURL-250} 250w, {PhotoURL-500} 500w, {PhotoURL-HighRes} 1280w" sizes="(max-width:750px) 100vw, (max-width:900px) 75vw, 60vw" alt="{block:Caption}{Caption}{/block:Caption}" height='{PhotoHeight-HighRes}' width='{PhotoWidth-HighRes}' />

@@ -86,6 +86,9 @@ img {
 .post {
 	overflow:hidden;
 }
+.post-head {
+	position: relative;
+}
 
 .non-media-content {
 		padding:0 2em;
