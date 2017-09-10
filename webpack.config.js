@@ -2,10 +2,13 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
-	entry: "./src/saligtaran.js",
+	entry: {
+		index: "./src/saligtaran-index.js",
+		permalink: "./src/saligtaran-permalink.js"
+	},
 	output: {
 		path: path.resolve(__dirname, "./dist"),
-		filename: "saligtaran.js"
+		filename: "[name].js"
 	},
 	module: {
 		rules: [
@@ -28,4 +31,4 @@ module.exports = {
 			minimize: true
 		}),
 	]
-}
+};
