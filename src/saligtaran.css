@@ -196,3 +196,7 @@ li.note + li.note {
 	padding: 1em 2em;
 	text-align: center;
 }
+
+div#disqus_thread {
+    margin: 2em;
+}
