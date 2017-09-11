@@ -1,3 +1,5 @@
+import "./style.js";
+
 import debounce from "debounce";
 import setPhotoset from "set-photoset";
 

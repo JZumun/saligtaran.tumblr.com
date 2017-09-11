@@ -1,5 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const extractCSS = new ExtractTextPlugin({ filename: "saligtaran.css" });
 
 module.exports = {
 	entry: {
@@ -16,10 +18,18 @@ module.exports = {
 				test: /\.js$/,
 				loader: "babel-loader",
 				exclude: /node_modules/
-			}
+			},
+			{
+				test: /\.css$/,
+				use: extractCSS.extract({ // Instance 1
+					fallback: "style-loader",
+					use: [ "css-loader" ]
+				})
+			},
 		]
 	},
 	plugins: [
+		extractCSS,
 		new webpack.optimize.ModuleConcatenationPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap: true,
