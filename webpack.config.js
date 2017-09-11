@@ -3,8 +3,8 @@ const path = require("path");
 
 module.exports = {
 	entry: {
-		index: "./src/saligtaran-index.js",
-		permalink: "./src/saligtaran-permalink.js"
+		index: "./src/index.js",
+		permalink: "./src/permalink.js"
 	},
 	output: {
 		path: path.resolve(__dirname, "./dist"),
