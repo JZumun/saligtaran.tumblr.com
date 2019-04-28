@@ -15,6 +15,74 @@
 	<meta name="keywords" content="jzumun{block:Permalink}, {block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}" />
 	<meta name=”title” content=”{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}” />
 
+	<meta property="og:site_name" content="{Title}"/>
+
+	{block:PermalinkPage}
+		<meta property="og:url" content="{Permalink}"/>
+		<meta property="og:type" content="article"/>
+		{block:Posts}
+			{block:Text}
+				{block:Title}<meta property="og:title" content="{PlaintextTitle}"/>{/block:Title}
+				<meta property="og:description" content="{PlaintextBody}"/>
+			{/block:Text}
+
+			{block:Photo}
+				<meta property="og:image" content="{PhotoURL-500}"/>
+				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+			{/block:Photo}
+
+			{block:Photoset}
+				{block:Photos}
+				<meta property="og:image" content="{PhotoURL-500}"/>
+				{/block:Photos}
+				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+			{/block:Photoset}
+
+			{block:Quote}
+				<meta property="og:title" content="{PlaintextQuote}"/>
+				<meta property="og:description" content="{PlaintextSource}"/>
+				<meta property="og:image" content="{PortraitURL-64}"/>
+			{/block:Quote}
+
+			{block:Link}
+				<meta property="og:title" content="{PlaintextName}"/>
+				<meta property="og:description" content="{PlaintextDescription}"/>
+				<meta property="og:image" content="{PortraitURL-64}"/>
+				<meta name="twitter:card" content="summary_large_image">
+			{/block:Link}
+
+			{block:Chat}
+				<meta property="og:title" content="{PlaintextTitle}"/>
+				<meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+				<meta property="og:image" content="{PortraitURL-64}"/>
+			{/block:Chat}
+
+			{block:Audio}
+				<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+				<meta property="og:description" content="{PlaintextCaption}"/>
+				{block:AlbumArt}<meta property="og:image" content="{AlbumArtURL}"/>{/block:AlbumArt}
+			{/block:Audio}
+
+			{block:Video}
+				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+			{/block:Video}
+
+			{block:Answer}
+				<meta property="og:title" content="{PlaintextQuestion}"/>
+				<meta property="og:description" content="{PlaintextAnswer}"/>
+				<meta property="og:image" content="{PortraitURL-64}"/>
+			{/block:Answer}
+
+		{/block:Posts}
+	{/block:PermalinkPage}
+
+	{block:IndexPage}
+		<meta property="og:title" content="{Title}"/>
+		<meta property="og:type" content="blog"/>
+		<meta property="og:description" content="{MetaDescription}"/>
+		<meta property="og:image" content="{PortraitURL-64}"/>
+	{/block:IndexPage}
+
 	<meta name="image:Body Background" content=""/>
 	<meta name="image:Title Background" content=""/>
 	<meta name="image:Post Body Background" content=""/>
@@ -40,7 +108,7 @@
 
 
 	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
 	<link rel="shortcut icon" href="{Favicon}" />
@@ -51,8 +119,8 @@
 	{/block:Pagination}
 
 
-	<link href='http://fonts.googleapis.com/css?family={text:Google Title Font}:{text:Google Title Font Sizes}|{text:Google Body Font}:{text:Google Body Font Sizes}' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/wvoc5tm/TCvow3zla/saligtaran.css" >
+	<link href='https://fonts.googleapis.com/css?family={text:Google Title Font}:{text:Google Title Font Sizes}|{text:Google Body Font}:{text:Google Body Font Sizes}' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/wvoc5tm/TCvow3zla/saligtaran.css" >
 	<style type="text/css">
 		/*Vars*/
 				:focus { outline-color: {AccentColor} ; }
@@ -206,7 +274,7 @@
 				{/block:Quote}
 				{block:Link}
 				<a href="{URL}" class="head-content non-media-content " target="_blank">
-					<div class="head-aside {block:Thumbnail} has-thumbnail " style="background-image:url('http://static.tumblr.com/wvoc5tm/m7Dn6v2vk/g3178.png'), url('{Thumbnail}') {/block:Thumbnail}" ></div>
+					<div class="head-aside {block:Thumbnail} has-thumbnail " style="background-image:url('https://static.tumblr.com/wvoc5tm/m7Dn6v2vk/g3178.png'), url('{Thumbnail}') {/block:Thumbnail}" ></div>
 					<div class="head-main-content link-container" >
 						<h1 class="title">{Name}</h1>
 						<span class="host">{Host}</span>
@@ -231,12 +299,12 @@
 				{block:Video}<div class="head-content media-content iframe-resize">{Video-500}</div>{/block:Video}
 				{block:Answer}
 				<div class="head-content non-media-content  dialogue asker">
-					<a href="http://{PlaintextAsker}.tumblr.com/" class="head-aside speaker supine cover" data-caption="{PlaintextAsker}" style="background-image:url({AskerPortraitURL-128})">{PlaintextAsker}</a>
+					<a href="https://{PlaintextAsker}.tumblr.com/" class="head-aside speaker supine cover" data-caption="{PlaintextAsker}" style="background-image:url({AskerPortraitURL-128})">{PlaintextAsker}</a>
 					<div class="spoken head-main-content">{Question}</div>
 				</div>
 				{block:Answerer}
 				<div class="head-content non-media-content  dialogue answerer">
-					<a href="http://{PlaintextAnswerer}.tumblr.com/"class="head-aside speaker supine cover" data-caption="{PlaintextAnswerer}" style="background-image:url({AnswererPortraitURL-128})" >{PlaintextAnswerer}</a>
+					<a href="https://{PlaintextAnswerer}.tumblr.com/"class="head-aside speaker supine cover" data-caption="{PlaintextAnswerer}" style="background-image:url({AnswererPortraitURL-128})" >{PlaintextAnswerer}</a>
 					<div class="spoken head-main-content">{Answer}</div>
 				</div>
 				{/block:Answerer}
@@ -315,7 +383,7 @@
 		{block:IfDisqusShortname}
 		<div class="post disqus">
 			<div id="disqus_thread"></div>
-			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 				</div>
 		{/block:IfDisqusShortname}
 		{block:PostNotes}<section class="post" id="notes">{PostNotes-64}</section>{/block:PostNotes}
@@ -334,9 +402,9 @@
 	<footer id="footer" class="footing">
 		<ul class="listing" id="credits">
 			<li>Copyright &copy; {CopyrightYears}.</li>
-			<li>Theme by <a href="http://jzumun.tumblr.com">JZumun</a>.</li>
+			<li>Theme by <a href="https://jzumun.tumblr.com">JZumun</a>.</li>
 			{block:IfDisqusShortname}
-			<li>Comments by <a href="http://disqus.com" class="dsq-brlink">Disqus</a></li>
+			<li>Comments by <a href="https://disqus.com" class="dsq-brlink">Disqus</a></li>
 			{/block:IfDisqusShortname}
 		</ul>
 		<ul class="listing" id="foot-links">
@@ -345,10 +413,10 @@
 	</footer>
 	<div class="script-container">
 		{block:IndexPage}
-		<script type="text/javascript" src="http://static.tumblr.com/wvoc5tm/sG7ow2xc9/index.js"></script>
+		<script type="text/javascript" src="https://static.tumblr.com/wvoc5tm/sG7ow2xc9/index.js"></script>
 		{/block:IndexPage}
 		{block:PermalinkPage}
-		<script type="text/javascript" src="http://static.tumblr.com/wvoc5tm/ZEaow2xcc/permalink.js"></script>
+		<script type="text/javascript" src="https://static.tumblr.com/wvoc5tm/ZEaow2xcc/permalink.js"></script>
 		{block:IfDisqusShortname}
 		<script type="text/javascript">
 				var disqus_shortname = '{text:Disqus Shortname}'
