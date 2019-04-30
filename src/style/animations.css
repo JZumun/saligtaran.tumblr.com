@@ -1,40 +1,42 @@
+/* AMbigram Animations */
 .ambigram-holder {
-	display: block;
-	transition: transform 1.5s ease-in-out;
+  display: block;
+  transition: transform 1.5s ease-in-out;
 }
 
-.rotational .ambigram-animator:checked ~ .ambigram-holder  {
-	transform: rotate(180deg);
+.rotational .ambigram-animator:checked ~ .ambigram-holder {
+  transform: rotate(180deg);
 }
 
 .mirror_reflection .ambigram-animator:checked ~ .ambigram-holder {
-	transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .lake_reflection .ambigram-animator:checked ~ .ambigram-holder {
-	transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
 
 .fortyfive_deg .ambigram-animator:checked ~ .ambigram-holder {
-	transform: rotate(90deg) rotateY(180deg);
+  transform: rotate(90deg) rotateY(180deg);
 }
 
-.ambigram-animator, .ambigram-animator-label {
-	display: none;
+.ambigram-animator,
+.ambigram-animator-label {
+  display: none;
 }
 .ambigram:not(.animated) .ambigram-animator-label {
-	display: block;
+  display: block;
 }
 
 .ambigram-animator-label {
-	position:absolute;
-	bottom:0px;
-	z-index:100000 !important;
-	text-align: center;
-	background-color: #102029;
-	color: white;
-	padding: 0.5em;
-	opacity: 0.7;
-	cursor: pointer;
-	font-size: 0.75em;
+  position: absolute;
+  bottom: 0px;
+  z-index: 100000 !important;
+  text-align: center;
+  background-color: #102029;
+  color: white;
+  padding: 0.5em;
+  opacity: 0.7;
+  cursor: pointer;
+  font-size: 0.75em;
 }
