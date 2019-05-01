@@ -79,6 +79,9 @@ main
     display table
     clear both
 
+.search-title
+  padding-bottom 1em
+
 .index-content
   .photoset-container
     .photo-box
@@ -169,25 +172,22 @@ main
   & > *
     display inline-block
 
-ol
-  &.notes
-    padding 0 2em
+ol.notes
+  padding 0 2em
 
-li
-  &.note
-    display grid
-    grid-gap 1em
-    grid-template-columns 4em 1fr
+li.note
+  display grid
+  grid-gap 1em
+  grid-template-columns 4em 1fr
 
-    .clear
-      display none
+  .clear
+    display none
 
-    .avatar_frame
-      grid-row span 3
+  .avatar_frame
+    grid-row span 3
 
-    & + li
-      &.note
-        margin-top 0.5em
+  & + li.note
+    margin-top 0.5em
 
 .pagination
   padding 1em 2em
@@ -195,3 +195,23 @@ li
 
 div#disqus_thread
   margin 2em
+
+.tags-cloud
+  text-align center
+  margin 1em auto
+  max-width 500px
+
+  h3
+    text-transform uppercase
+    margin-bottom 0
+
+  ul
+    margin 0
+    padding 0
+
+  li
+    display inline-block
+    margin 0 0.25rem
+
+  a
+    font-weight lighter
