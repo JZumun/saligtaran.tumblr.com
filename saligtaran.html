@@ -14,74 +14,8 @@
 
 	<meta name="keywords" content="jzumun{block:Permalink}, {block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}" />
 	<meta name=”title” content=”{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}” />
-
-	<meta property="og:site_name" content="{Title}"/>
-
-	{block:PermalinkPage}
-		<meta property="og:url" content="{Permalink}"/>
-		<meta property="og:type" content="article"/>
-		{block:Posts}
-			{block:Text}
-				{block:Title}<meta property="og:title" content="{PlaintextTitle}"/>{/block:Title}
-				<meta property="og:description" content="{PlaintextBody}"/>
-			{/block:Text}
-
-			{block:Photo}
-				<meta property="og:image" content="{PhotoURL-500}"/>
-				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-			{/block:Photo}
-
-			{block:Photoset}
-				{block:Photos}
-				<meta property="og:image" content="{PhotoURL-500}"/>
-				{/block:Photos}
-				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-			{/block:Photoset}
-
-			{block:Quote}
-				<meta property="og:title" content="{PlaintextQuote}"/>
-				<meta property="og:description" content="{PlaintextSource}"/>
-				<meta property="og:image" content="{PortraitURL-64}"/>
-			{/block:Quote}
-
-			{block:Link}
-				<meta property="og:title" content="{PlaintextName}"/>
-				<meta property="og:description" content="{PlaintextDescription}"/>
-				<meta property="og:image" content="{PortraitURL-64}"/>
-				<meta name="twitter:card" content="summary_large_image">
-			{/block:Link}
-
-			{block:Chat}
-				<meta property="og:title" content="{PlaintextTitle}"/>
-				<meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
-				<meta property="og:image" content="{PortraitURL-64}"/>
-			{/block:Chat}
-
-			{block:Audio}
-				<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
-				<meta property="og:description" content="{PlaintextCaption}"/>
-				{block:AlbumArt}<meta property="og:image" content="{AlbumArtURL}"/>{/block:AlbumArt}
-			{/block:Audio}
-
-			{block:Video}
-				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-			{/block:Video}
-
-			{block:Answer}
-				<meta property="og:title" content="{PlaintextQuestion}"/>
-				<meta property="og:description" content="{PlaintextAnswer}"/>
-				<meta property="og:image" content="{PortraitURL-64}"/>
-			{/block:Answer}
-
-		{/block:Posts}
-	{/block:PermalinkPage}
-
-	{block:IndexPage}
-		<meta property="og:title" content="{Title}"/>
-		<meta property="og:type" content="blog"/>
-		<meta property="og:description" content="{MetaDescription}"/>
-		<meta property="og:image" content="{PortraitURL-64}"/>
-	{/block:IndexPage}
+	
+	<meta name="pinterest" content="nopin" />
 
 	<meta name="image:Body Background" content=""/>
 	<meta name="image:Title Background" content=""/>
@@ -100,11 +34,83 @@
 	<meta name="text:Font Size" content="10px" />
 
 	<meta name="color:Header" content="#f2f2f2" />
+	<meta name="color:HeaderText" content="#f2f2f2" />
 	<meta name="color:Body Shadow" content="#dddddd" />
 	<meta name="color:Accent Shadow" content="#701706" />
 	<meta name="color:Text" content="#121212" />
 
+	<meta name="if:Post Theory Tag Cloud" content="1" />
 	<meta name="if:Keyboard Shortcuts" content="1" />
+	
+	<meta property="og:site_name" content="{Title}"/>
+
+{block:PermalinkPage}
+
+    <meta property="og:url" content="{Permalink}"/>
+    <meta property="og:type" content="article"/>
+
+        {block:Posts}
+            {block:Text}
+                {block:Title}<meta property="og:title" content="{PlaintextTitle}"/>{/block:Title}
+                <meta property="og:description" content="{PlaintextBody}"/>
+            {/block:Text}
+
+            {block:Photo}
+                <meta property="og:image" content="{PhotoURL-500}"/>
+                {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+            {/block:Photo}
+
+            {block:Photoset}
+                {block:Photos}
+                <meta property="og:image" content="{PhotoURL-500}"/>
+                {/block:Photos}
+                {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+            {/block:Photoset}
+
+            {block:Quote}
+                <meta property="og:title" content="{PlaintextQuote}"/>
+                <meta property="og:description" content="{PlaintextSource}"/>
+                <meta property="og:image" content="{PortraitURL-64}"/>
+            {/block:Quote}
+
+            {block:Link}
+                <meta property="og:title" content="{PlaintextName}"/>
+                <meta property="og:description" content="{PlaintextDescription}"/>
+                <meta property="og:image" content="{PortraitURL-64}"/>
+            {/block:Link}
+
+            {block:Chat}
+                <meta property="og:title" content="{PlaintextTitle}"/>
+                <meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+                <meta property="og:image" content="{PortraitURL-64}"/>
+            {/block:Chat}
+
+            {block:Audio}
+                <meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+                <meta property="og:description" content="{PlaintextCaption}"/>
+                {block:AlbumArt}<meta property="og:image" content="{AlbumArtURL}"/>{/block:AlbumArt}
+            {/block:Audio}
+
+            {block:Video}
+                {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+            {/block:Video}
+
+            {block:Answer}
+                <meta property="og:title" content="{PlaintextQuestion}"/>
+                <meta property="og:description" content="{PlaintextAnswer}"/>
+                <meta property="og:image" content="{PortraitURL-64}"/>
+            {/block:Answer}
+
+        {/block:Posts}
+
+{/block:PermalinkPage}
+
+{block:IndexPage}
+    <meta property="og:title" content="{Title}"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="og:description" content="{MetaDescription}"/>
+    <meta property="og:image" content="{PortraitURL-64}"/>
+{/block:IndexPage}
 
 
 	<!--[if lt IE 9]>
@@ -119,8 +125,10 @@
 	{/block:Pagination}
 
 
-	<link href='https://fonts.googleapis.com/css?family={text:Google Title Font}:{text:Google Title Font Sizes}|{text:Google Body Font}:{text:Google Body Font Sizes}' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/wvoc5tm/TCvow3zla/saligtaran.css" >
+	<link href='//fonts.googleapis.com/css?family={text:Google Title Font}:{text:Google Title Font Sizes}|{text:Google Body Font}:{text:Google Body Font Sizes}' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a{background:transparent}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}*,:after,:before{box-sizing:border-box}a{text-decoration:none;font-weight:700}img{display:block;max-width:100%;height:auto}#head{padding:1em;text-align:center}.header-title{letter-spacing:.1ch;font-weight:lighter;font-size:2.5em;margin-bottom:0}.header-description{max-width:1000px;margin:auto;line-height:2;border-top:1px solid;font-size:.75em;font-weight:lighter}.header-nav{margin-top:3em;display:inline-block}#searchform,.nav-link{margin:0 1em}#searchform{display:inline-block}#searchform .label{display:none}#searchform .submit{opacity:0}#searchform .query{width:6ch}#searchform .query:focus{outline:0;box-shadow:inset 0 -.125em 0 0;width:16ch}#searchform .query,#searchform .submit{background:transparent;border:0;padding:.25em 0;transition:width 1s}#searchform .query:focus+.submit,#searchform .submit:focus{opacity:1}main{padding:1em}#content{max-width:1000px;margin:auto}#content:after{content:"";display:table;clear:both}.search-title{padding-bottom:1em}.index-content .photoset-container .photo-box:not(:first-of-type){display:none}.index-content .post{position:relative;float:left;width:calc(((100% - 3em) / 3))}.index-content .post:hover .ambigram-animator-label,.index-content .post:hover .post-footing{opacity:.8}.index-content .ambigram-animator-label,.index-content .post-footing{transition:opacity .5s;opacity:0}.index-content .post-footing{position:absolute;top:0;left:0;right:0;padding:0}.index-content .tumblr-options{display:flex}.index-content .post-options .button{padding:.5em;flex:none;width:2em;height:2em}.index-content .permalink{color:#fff!important;padding:0 .5em;flex:auto;line-height:2em}.post{overflow:hidden}.post-head{position:relative}.non-media-content{padding:0 2em;display:block}.photoset-articles .post{margin:0}.index-content .button iframe,.index-content .reblog_button{width:100%!important}.post-body,.post-footing{padding:0 2em}#footer{padding:1em}#footer>*{max-width:1000px;margin:auto;padding:0}.listing{text-align:center}.listing li,.tag-container{display:inline-block;margin-right:1ch}.post-details-tags{margin:0;padding:0}.index-content .post-footing>:not(.post-options),.share-options{display:none}.tumblr-options>*{display:inline-block}ol.notes{padding:0 2em}li.note{display:grid;grid-gap:1em;grid-template-columns:4em 1fr}li.note .clear{display:none}li.note .avatar_frame{grid-row:span 3}li.note+li.note{margin-top:.5em}.pagination{padding:1em 2em;text-align:center}div#disqus_thread{margin:2em}.tags-cloud{text-align:center;margin:1em auto;max-width:500px}.tags-cloud h3{text-transform:uppercase;margin-bottom:0}.tags-cloud ul{margin:0;padding:0}.tags-cloud li{display:inline-block;margin:0 .25rem}.tags-cloud a{font-weight:lighter}.ambigram-holder{display:block;transition:transform 1.5s ease-in-out}.rotational .ambigram-animator:checked~.ambigram-holder{transform:rotate(180deg)}.mirror_reflection .ambigram-animator:checked~.ambigram-holder{transform:rotateY(180deg)}.lake_reflection .ambigram-animator:checked~.ambigram-holder{transform:rotateX(180deg)}.fortyfive_deg .ambigram-animator:checked~.ambigram-holder{transform:rotate(90deg) rotateY(180deg)}.ambigram-animator,.ambigram-animator-label{display:none}.ambigram:not(.animated) .ambigram-animator-label{display:block}.ambigram-animator-label{position:absolute;bottom:0;z-index:100000!important;text-align:center;background-color:#102029;color:#fff;padding:.5em;opacity:.7;cursor:pointer;font-size:.75em}
+	</style>
 	<style type="text/css">
 		/*Vars*/
 				:focus { outline-color: {AccentColor} ; }
@@ -174,7 +182,7 @@
 		{
 			background-color: {color:Header} ;
 			border-color: {AccentColor} ;
-			color: {BackgroundColor}
+			color: {color:HeaderText}
 		}
 
 		/*Accent*/
@@ -182,7 +190,7 @@
 		{
 			background-color: {AccentColor};
 			border-color: {color:Accent Shadow};
-			color: {BackgroundColor};
+			color: {HeaderText};
 		}
 
 		/*Accent Shadow*/
@@ -190,7 +198,7 @@
 		{
 			border-color: {AccentColor};
 			background-color: {color:Accent Shadow};
-			color: {BackgroundColor};
+			color: {HeaderText};
 		}
 
 
@@ -203,16 +211,15 @@
 		}
 
 		/*Variant Text Themes*/
+		.query { color: {TitleColor} }
 		body, .title	{	color: {color:Text};		}
 		.header-title {	color: {TitleColor} ; }
 		a		{	color:{AccentColor};			}
 		a:hover {	color:{color:Accent Shadow};	}
 		#footer {	color:{AccentColor};		}
-		.nav-link, .note a {   color:{BackgroundColor};         }
 
 
 		{CustomCSS}
-
 	</style>
 </head>
 <body>
@@ -239,12 +246,13 @@
 			<input type="submit" class="submit button" value="&rtrif;"/>
 		</form>
 	</header>
-	<main id="content" class="{block:IndexPage}index-content{/block:IndexPage}">
+	<main style="padding:1em">
+	<section id="content" class="{block:IndexPage}index-content{/block:IndexPage}">
 		{block:SearchPage}
-		<h1 class="content-header">{SearchResultCount} Results for {SearchQuery} {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
+		<h1 class="content-header search-title">{SearchResultCount} Results for {SearchQuery} {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
 		{/block:SearchPage}
 		{block:TagPage}
-		<h1 class="content-header">{SearchResultCount} Posts tagged '{Tag}' {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
+		<h1 class="content-header search-title">{SearchResultCount} Posts tagged '{Tag}' {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
 		{/block:TagPage}
 		{block:Posts}
 		<article class="post {TagsAsClasses} post-{PostType} {block:Photoset}post-photoset{/block:Photoset}" id="post-{PostID}">
@@ -274,7 +282,7 @@
 				{/block:Quote}
 				{block:Link}
 				<a href="{URL}" class="head-content non-media-content " target="_blank">
-					<div class="head-aside {block:Thumbnail} has-thumbnail " style="background-image:url('https://static.tumblr.com/wvoc5tm/m7Dn6v2vk/g3178.png'), url('{Thumbnail}') {/block:Thumbnail}" ></div>
+					<div class="head-aside {block:Thumbnail} has-thumbnail " style="background-image:url('//static.tumblr.com/wvoc5tm/m7Dn6v2vk/g3178.png'), url('{Thumbnail}') {/block:Thumbnail}" ></div>
 					<div class="head-main-content link-container" >
 						<h1 class="title">{Name}</h1>
 						<span class="host">{Host}</span>
@@ -391,6 +399,7 @@
 
 
 	{/block:Posts}
+	</section>
 	</main>
 	<nav id="pagination" class="pagination">
 		{block:Pagination}
@@ -410,13 +419,18 @@
 		<ul class="listing" id="foot-links">
 			<li><a href="{RSS}">RSS FEED</a></li>
 		</ul>
+		<section class="tags-cloud">
+		    <h3>Tags</h3>
+		    <div id="tumblr-tag-list"></div>
+		</section>
+	    
 	</footer>
 	<div class="script-container">
 		{block:IndexPage}
-		<script type="text/javascript" src="https://static.tumblr.com/wvoc5tm/sG7ow2xc9/index.js"></script>
+		<script type="text/javascript" src="https://static.tumblr.com/wvoc5tm/lnapqs77y/index.js"></script>
 		{/block:IndexPage}
 		{block:PermalinkPage}
-		<script type="text/javascript" src="https://static.tumblr.com/wvoc5tm/ZEaow2xcc/permalink.js"></script>
+		<script type="text/javascript" src="//static.tumblr.com/wvoc5tm/ZEaow2xcc/permalink.js"></script>
 		{block:IfDisqusShortname}
 		<script type="text/javascript">
 				var disqus_shortname = '{text:Disqus Shortname}'
@@ -439,6 +453,7 @@
 			ga('send', 'pageview');
 		</script>
 		{/block:IfGoogleAnalyticsID}
+		<script src="https://drunkonschadenfreude.com/js/tag-list.js?name=saligtaran&limit=&taglimit=&tagfreq=1&scale=true&math=log&maxsize=125&case=lower&showcount=false&link=true&displaytype=plain&sorting=alphabetical&exclude=ambigram" type="text/javascript"></script>
 	</div>
 </body>
 </html>
