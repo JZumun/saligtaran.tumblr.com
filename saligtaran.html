@@ -14,74 +14,78 @@
 
 	<meta name="keywords" content="jzumun{block:Permalink}, {block:Posts}{block:Tags}{Tag}, {/block:Tags}{/block:Posts}{/block:Permalink}" />
 	<meta name=”title” content=”{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}” />
-
+	
+	<meta name="pinterest" content="nopin" />
+	
 	<meta property="og:site_name" content="{Title}"/>
 
-	{block:PermalinkPage}
-		<meta property="og:url" content="{Permalink}"/>
-		<meta property="og:type" content="article"/>
-		{block:Posts}
-			{block:Text}
-				{block:Title}<meta property="og:title" content="{PlaintextTitle}"/>{/block:Title}
-				<meta property="og:description" content="{PlaintextBody}"/>
-			{/block:Text}
+{block:PermalinkPage}
 
-			{block:Photo}
-				<meta property="og:image" content="{PhotoURL-500}"/>
-				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-			{/block:Photo}
+    <meta property="og:url" content="{Permalink}"/>
+    <meta property="og:type" content="article"/>
 
-			{block:Photoset}
-				{block:Photos}
-				<meta property="og:image" content="{PhotoURL-500}"/>
-				{/block:Photos}
-				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-			{/block:Photoset}
+        {block:Posts}
+            {block:Text}
+                {block:Title}<meta property="og:title" content="{PlaintextTitle}"/>{/block:Title}
+                <meta property="og:description" content="{PlaintextBody}"/>
+            {/block:Text}
 
-			{block:Quote}
-				<meta property="og:title" content="{PlaintextQuote}"/>
-				<meta property="og:description" content="{PlaintextSource}"/>
-				<meta property="og:image" content="{PortraitURL-64}"/>
-			{/block:Quote}
+            {block:Photo}
+                <meta property="og:image" content="{PhotoURL-500}"/>
+                {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+            {/block:Photo}
 
-			{block:Link}
-				<meta property="og:title" content="{PlaintextName}"/>
-				<meta property="og:description" content="{PlaintextDescription}"/>
-				<meta property="og:image" content="{PortraitURL-64}"/>
-				<meta name="twitter:card" content="summary_large_image">
-			{/block:Link}
+            {block:Photoset}
+                {block:Photos}
+                <meta property="og:image" content="{PhotoURL-500}"/>
+                {/block:Photos}
+                {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+            {/block:Photoset}
 
-			{block:Chat}
-				<meta property="og:title" content="{PlaintextTitle}"/>
-				<meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
-				<meta property="og:image" content="{PortraitURL-64}"/>
-			{/block:Chat}
+            {block:Quote}
+                <meta property="og:title" content="{PlaintextQuote}"/>
+                <meta property="og:description" content="{PlaintextSource}"/>
+                <meta property="og:image" content="{PortraitURL-64}"/>
+            {/block:Quote}
 
-			{block:Audio}
-				<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
-				<meta property="og:description" content="{PlaintextCaption}"/>
-				{block:AlbumArt}<meta property="og:image" content="{AlbumArtURL}"/>{/block:AlbumArt}
-			{/block:Audio}
+            {block:Link}
+                <meta property="og:title" content="{PlaintextName}"/>
+                <meta property="og:description" content="{PlaintextDescription}"/>
+                <meta property="og:image" content="{PortraitURL-64}"/>
+            {/block:Link}
 
-			{block:Video}
-				{block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-			{/block:Video}
+            {block:Chat}
+                <meta property="og:title" content="{PlaintextTitle}"/>
+                <meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+                <meta property="og:image" content="{PortraitURL-64}"/>
+            {/block:Chat}
 
-			{block:Answer}
-				<meta property="og:title" content="{PlaintextQuestion}"/>
-				<meta property="og:description" content="{PlaintextAnswer}"/>
-				<meta property="og:image" content="{PortraitURL-64}"/>
-			{/block:Answer}
+            {block:Audio}
+                <meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+                <meta property="og:description" content="{PlaintextCaption}"/>
+                {block:AlbumArt}<meta property="og:image" content="{AlbumArtURL}"/>{/block:AlbumArt}
+            {/block:Audio}
 
-		{/block:Posts}
-	{/block:PermalinkPage}
+            {block:Video}
+                {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+            {/block:Video}
 
-	{block:IndexPage}
-		<meta property="og:title" content="{Title}"/>
-		<meta property="og:type" content="blog"/>
-		<meta property="og:description" content="{MetaDescription}"/>
-		<meta property="og:image" content="{PortraitURL-64}"/>
-	{/block:IndexPage}
+            {block:Answer}
+                <meta property="og:title" content="{PlaintextQuestion}"/>
+                <meta property="og:description" content="{PlaintextAnswer}"/>
+                <meta property="og:image" content="{PortraitURL-64}"/>
+            {/block:Answer}
+
+        {/block:Posts}
+
+{/block:PermalinkPage}
+
+{block:IndexPage}
+    <meta property="og:title" content="{Title}"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="og:description" content="{MetaDescription}"/>
+    <meta property="og:image" content="{PortraitURL-64}"/>
+{/block:IndexPage}
 
 	<meta name="image:Body Background" content=""/>
 	<meta name="image:Title Background" content=""/>
@@ -100,10 +104,12 @@
 	<meta name="text:Font Size" content="10px" />
 
 	<meta name="color:Header" content="#f2f2f2" />
+	<meta name="color:HeaderText" content="#f2f2f2" />
 	<meta name="color:Body Shadow" content="#dddddd" />
 	<meta name="color:Accent Shadow" content="#701706" />
 	<meta name="color:Text" content="#121212" />
 
+	<meta name="if:Post Theory Tag Cloud" content="1" />
 	<meta name="if:Keyboard Shortcuts" content="1" />
 
 
@@ -119,8 +125,10 @@
 	{/block:Pagination}
 
 
-	<link href='https://fonts.googleapis.com/css?family={text:Google Title Font}:{text:Google Title Font Sizes}|{text:Google Body Font}:{text:Google Body Font Sizes}' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="https://static.tumblr.com/wvoc5tm/TCvow3zla/saligtaran.css" >
+	<link href='//fonts.googleapis.com/css?family={text:Google Title Font}:{text:Google Title Font Sizes}|{text:Google Body Font}:{text:Google Body Font Sizes}' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		/* CSS HERE */
+	</style>
 	<style type="text/css">
 		/*Vars*/
 				:focus { outline-color: {AccentColor} ; }
@@ -170,11 +178,11 @@
 
 		/*Background*/
 		.color-background,
-		#head, #footer, .index-content .post-footing
+		#head, #footer, .index-content .post-footing, .permalink-overlay
 		{
 			background-color: {color:Header} ;
 			border-color: {AccentColor} ;
-			color: {BackgroundColor}
+			color: {color:HeaderText}
 		}
 
 		/*Accent*/
@@ -182,7 +190,7 @@
 		{
 			background-color: {AccentColor};
 			border-color: {color:Accent Shadow};
-			color: {BackgroundColor};
+			color: {HeaderText};
 		}
 
 		/*Accent Shadow*/
@@ -190,7 +198,7 @@
 		{
 			border-color: {AccentColor};
 			background-color: {color:Accent Shadow};
-			color: {BackgroundColor};
+			color: {HeaderText};
 		}
 
 
@@ -203,16 +211,14 @@
 		}
 
 		/*Variant Text Themes*/
+		.query { color: {TitleColor} }
 		body, .title	{	color: {color:Text};		}
 		.header-title {	color: {TitleColor} ; }
 		a		{	color:{AccentColor};			}
 		a:hover {	color:{color:Accent Shadow};	}
 		#footer {	color:{AccentColor};		}
-		.nav-link, .note a {   color:{BackgroundColor};         }
-
 
 		{CustomCSS}
-
 	</style>
 </head>
 <body>
@@ -239,15 +245,17 @@
 			<input type="submit" class="submit button" value="&rtrif;"/>
 		</form>
 	</header>
-	<main id="content" class="{block:IndexPage}index-content{/block:IndexPage}">
+	<main>
+	<section id="content" class="{block:IndexPage}index-content{/block:IndexPage}">
 		{block:SearchPage}
-		<h1 class="content-header">{SearchResultCount} Results for {SearchQuery} {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
+		<h1 class="content-header search-title">{SearchResultCount} Results for {SearchQuery} {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
 		{/block:SearchPage}
 		{block:TagPage}
-		<h1 class="content-header">{SearchResultCount} Posts tagged '{Tag}' {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
+		<h1 class="content-header search-title">{SearchResultCount} Posts tagged '{Tag}' {block:Pagination}(Page {CurrentPage} of {TotalPages}) {/block:Pagination}</h1>
 		{/block:TagPage}
 		{block:Posts}
 		<article class="post {TagsAsClasses} post-{PostType} {block:Photoset}post-photoset{/block:Photoset}" id="post-{PostID}">
+		    <a href="{Permalink}" class="permalink-overlay {block:PermalinkPage}hidden{/block:PermalinkPage}">View</a>
 			<section class="post-head">
 				{block:Text}<a href="{Permalink}" class="non-media-content head-content title">{block:Title}<h1>{Title}</h1>{/block:Title}</a>{/block:Text}
 				{block:Chat}{block:Title}<a href="{Permalink}" class="head-content title non-media-content ">{block:Title}<h1>{Title}</h1>{/block:Title}</a>{/block:Title}{/block:Chat}
@@ -274,7 +282,7 @@
 				{/block:Quote}
 				{block:Link}
 				<a href="{URL}" class="head-content non-media-content " target="_blank">
-					<div class="head-aside {block:Thumbnail} has-thumbnail " style="background-image:url('https://static.tumblr.com/wvoc5tm/m7Dn6v2vk/g3178.png'), url('{Thumbnail}') {/block:Thumbnail}" ></div>
+					<div class="head-aside {block:Thumbnail} has-thumbnail " style="background-image:url('//static.tumblr.com/wvoc5tm/m7Dn6v2vk/g3178.png'), url('{Thumbnail}') {/block:Thumbnail}" ></div>
 					<div class="head-main-content link-container" >
 						<h1 class="title">{Name}</h1>
 						<span class="host">{Host}</span>
@@ -391,6 +399,7 @@
 
 
 	{/block:Posts}
+	</section>
 	</main>
 	<nav id="pagination" class="pagination">
 		{block:Pagination}
@@ -402,7 +411,7 @@
 	<footer id="footer" class="footing">
 		<ul class="listing" id="credits">
 			<li>Copyright &copy; {CopyrightYears}.</li>
-			<li>Theme by <a href="https://jzumun.tumblr.com">JZumun</a>.</li>
+			<li>Theme by <a href="https://jzumun.ph">JZumun</a>.</li>
 			{block:IfDisqusShortname}
 			<li>Comments by <a href="https://disqus.com" class="dsq-brlink">Disqus</a></li>
 			{/block:IfDisqusShortname}
@@ -410,13 +419,18 @@
 		<ul class="listing" id="foot-links">
 			<li><a href="{RSS}">RSS FEED</a></li>
 		</ul>
+		<section class="tags-cloud">
+		    <h3>Tags</h3>
+		    <div id="tumblr-tag-list"></div>
+		</section>
+	    
 	</footer>
 	<div class="script-container">
 		{block:IndexPage}
-		<script type="text/javascript" src="https://static.tumblr.com/wvoc5tm/sG7ow2xc9/index.js"></script>
+		<script type="text/javascript" src="https://static.tumblr.com/wvoc5tm/lnapqs77y/index.js"></script>
 		{/block:IndexPage}
 		{block:PermalinkPage}
-		<script type="text/javascript" src="https://static.tumblr.com/wvoc5tm/ZEaow2xcc/permalink.js"></script>
+		<script type="text/javascript" src="//static.tumblr.com/wvoc5tm/ZEaow2xcc/permalink.js"></script>
 		{block:IfDisqusShortname}
 		<script type="text/javascript">
 				var disqus_shortname = '{text:Disqus Shortname}'
@@ -439,6 +453,7 @@
 			ga('send', 'pageview');
 		</script>
 		{/block:IfGoogleAnalyticsID}
+		<script src="https://drunkonschadenfreude.com/js/tag-list.js?name=saligtaran&limit=&taglimit=&tagfreq=1&scale=true&math=log&maxsize=125&case=lower&showcount=false&link=true&displaytype=plain&sorting=alphabetical&exclude=ambigram" type="text/javascript"></script>
 	</div>
 </body>
 </html>

@@ -1,12 +1,12 @@
 /* Website Styles */
 *
-*:before
-*:after
+*::before
+*::after
   box-sizing border-box
 
 a
   text-decoration none
-  font-weight bold
+  font-weight 700
 
 img
   display block
@@ -14,20 +14,31 @@ img
   height auto
 
 #head
+  position relative
   padding 1em
   text-align center
+  margin-bottom 8px
+
+  &::after
+    content ""
+    display block
+    height 4px
+    bottom -8px
+    background inherit
+    position absolute
+    left 0
+    right 0
 
 .header-title
   letter-spacing 0.1ch
   font-weight lighter
-  font-size 2.5em
+  font-size 4em
   margin-bottom 0
 
 .header-description
   max-width 1000px
   margin auto
   line-height 2
-  border-top 1px solid
   font-size 0.75em
   font-weight lighter
 
@@ -71,8 +82,11 @@ main
   padding 1em
 
 #content
-  max-width 1000px
+  max-width 50rem
   margin auto
+
+  &.index-content
+    max-width 1000px
 
   &:after
     content ""
@@ -82,17 +96,25 @@ main
 .index-content
   .photoset-container
     .photo-box
-      &:not(:first-of-type)
+      & not( first-of-type)
         display none
 
   .post
     position relative
     float left
-    width calc(((100% - 3em) / 3))
+    width calc(((100% - 28px) / 3))
+
+    & not( nth-of-type(3n))
+      margin-right  14px
 
     &:hover
+      .ambigram-animator-label
       .post-footing
         opacity 0.8
+  
+  .ambigram-animator-label
+    transition opacity 0.5s
+    opacity 0
 
   .post-footing
     position absolute
@@ -121,6 +143,29 @@ main
 
 .post
   overflow hidden
+  position relative
+
+.permalink-overlay
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  display flex
+  justify-content  center
+  align-items  center
+  opacity  0
+  z-index 100
+  text-shadow: 0 0 2px #999
+  transition  all 0.25s
+
+  &:hover
+    opacity 0.5
+    background #0003
+
+.ambigram-animator-label
+.post-footing
+  z-index 101
 
 .post-head
   position relative
@@ -142,7 +187,20 @@ main
   padding 0 2em
 
 #footer
+  position relative
   padding 1em
+  margin-top 8px
+
+  &::before 
+    content ""
+    display block
+    height 4px
+    top -8px
+    background inherit
+    position absolute
+    left 0
+    right 0
+
 
   & > *
     max-width 1000px
@@ -161,7 +219,7 @@ main
   margin 0
   padding 0
 
-.index-content .post-footing > :not(.post-options)
+.index-content .post-footing >  not(.post-options)
 .share-options
   display none
 
@@ -195,3 +253,36 @@ li
 
 div#disqus_thread
   margin 2em
+
+
+img {  
+  min-height 50px
+  position relative
+
+  &::before
+    content  " "
+    display  block
+
+    position  absolute
+    top  0
+    left  0
+    height  100%
+    width  100%
+    background-color  rgb(242, 240, 240)
+    border  2px dotted rgb(224, 218, 218)
+    border-radius  5px
+
+  &::after 
+    content  "\f127" " Broken Image of " attr(alt)
+    display  block
+    font-size  0.75em
+    font-style  normal
+    font-weight lighter
+    color  rgb(100, 100, 100)
+
+    position  absolute
+    top  0
+    left  0
+    padding  0.5em 1.75rem
+    width  100%
+    text-align  center
